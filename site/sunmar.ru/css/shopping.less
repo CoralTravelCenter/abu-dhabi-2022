@@ -1,0 +1,115 @@
+@import "../../common/css/common";
+
+#site-wrap {
+	section {
+		> .contenu {
+
+		}
+
+		&.shopping {
+			margin-top: 3%;
+			>.contenu {
+				p {
+					max-width: 50em;
+					margin: 0 auto;
+					font-size: 1.2em;
+					text-align: center;
+					@media screen and (max-width: @mobile-breakpoint) {
+						padding: 0 2em;
+					}
+				}
+				.malls {
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: center;
+					margin-top: 2em;
+					.mall {
+						flex: 0 1 100%/3;
+						padding: 1em .5em;
+						@media screen and (max-width: @mobile-breakpoint) {
+							flex: 0 1 100%/2;
+							font-size: 2vw;
+							&:last-child:nth-child(2n+1) {
+								width: 100%;
+								flex: 1;
+							}
+						}
+						@media screen and (max-width: @narrow-breakpoint) {
+							flex: 1 1 100%;
+							font-size: 3vw;
+						}
+						.pad {
+							.flex-column;
+							height: 100%;
+							align-items: center;
+							text-align: center;
+							background-color: white;
+							padding: 1.5em;
+							border-radius: 1em;
+							@media screen and (max-width: @mobile-breakpoint) {
+								padding: 1em;
+							}
+							.logo-mall {
+								.proportional(200/65);
+								background: center no-repeat;
+								background-size: contain;
+								width: 10em;
+								max-width: 200px;
+							}
+							p {
+								margin-top: 1.5em;
+								margin-bottom: 0;
+								line-height: 1.2;
+							}
+						}
+					}
+					& + p {
+						margin-top: 2em;
+						font-weight: bold;
+					}
+				}
+			}
+		}
+
+		&.did-you-know {
+			>.contenu {
+				.visual {
+					width: 100%;
+					.proportional(1370/420);
+					background: url("../iii/visual-01-desktop.jpg") center no-repeat;
+					background-size: cover;
+					@media screen and (max-width: @mobile-breakpoint) {
+						.proportional(1/1);
+						background-image: url(../iii/visual-01-mobile.jpg);
+					}
+				}
+				h2 {
+					margin-top: 1em;
+				}
+				.facts {
+					width: 100%;
+					column-count: 2;
+					column-gap: 4em;
+					@media screen and (max-width: @mobile-breakpoint) {
+					    column-count: 1;
+						padding: 0 2em;
+					}
+					>* {
+						display: inline-block;
+						margin-top: 1em;
+					}
+				}
+			}
+		}
+	}
+}
+
+#hotels-set {
+	width: 100%;
+	max-width: 1280px;
+	margin: auto;
+}
+
+[data-module="destinationDetail"] h1 {
+	display: none;
+}

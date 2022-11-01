@@ -29,7 +29,70 @@
 			}
 		}
 
+		&.what2see-and-what2do {
+			>.contenu {
+				h2 {
+					max-width: none;
+				}
+				.alternate-layout {
+					.info-block {
+						width: 100%;
+						display: flex;
+						margin-top: 3%;
+						@media screen and (max-width: @mobile-breakpoint) {
+						    flex-direction: column!important;
+							align-items: center;
+							text-align: center;
+						}
+						&:nth-child(n+2) {
+						}
+						&:nth-child(even) {
+							flex-direction: row-reverse;
+							.info {
+								padding-right: 4em;
+							}
+						}
+						.visual {
+							.proportional(680/460);
+							background-size: cover;
+							flex-basis: calc(~"50% + 1em");
+							border-radius: 2em;
+							@media screen and (max-width: @mobile-breakpoint) {
+								width: 100%;
+							}
+						}
+						.info {
+							flex: 1 1;
+							.flex-column;
+							justify-content: center;
+							align-items: flex-start;
+							text-align: left;
+							padding-left: 4em;
+							@media screen and (max-width: @mobile-breakpoint) {
+								align-items: center;
+								text-align: center;
+								padding: 2em!important;
+							}
+							>*:nth-child(n+2) {
+								margin-top: 5%;
+							}
+							h3 {
+								text-align: inherit;
+								font-size: 2.2em;
+								margin: 0;
+							}
+							p {
+								margin-bottom: 0;
+								font-weight: normal;
+							}
+							.actions {
 
+							}
+						}
+					}
+				}
+			}
+		}
 
 	}
 }
@@ -164,4 +227,8 @@ body .subpage-search-bg {
 	width: 100%;
 	max-width: 1280px;
 	margin: auto;
+}
+
+[data-module="destinationDetail"] h1 {
+	display: none;
 }

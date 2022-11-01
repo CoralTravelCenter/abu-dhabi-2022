@@ -1,0 +1,111 @@
+@import "../../common/css/common";
+
+#site-wrap {
+	section {
+		> .contenu {
+
+		}
+
+		&.intro {
+			.proportional(1370/520);
+			max-width: 1370px;
+			margin: auto;
+			background: url("../iii/intro-desktop.jpg") center no-repeat;
+			background-size: cover;
+			@media screen and (max-width: @mobile-breakpoint) {
+				.proportional(720/800);
+				background-image: url(../iii/intro-mobile.jpg);
+			}
+		}
+
+		&.more-about {
+			//margin-top: 3%;
+			>.contenu {
+				p {
+					max-width: 60em;
+					margin: 0 auto;
+					font-size: 1.2em;
+					text-align: center;
+					@media screen and (max-width: @mobile-breakpoint) {
+						padding: 0 2em;
+					}
+				}
+			}
+		}
+
+		&.what2see-and-what2do {
+			>.contenu {
+				h2 {
+					max-width: none;
+				}
+				.alternate-layout {
+					.info-block {
+						width: 100%;
+						display: flex;
+						margin-top: 3%;
+						@media screen and (max-width: @mobile-breakpoint) {
+							flex-direction: column!important;
+							align-items: center;
+							text-align: center;
+						}
+						&:nth-child(n+2) {
+						}
+						&:nth-child(odd) {
+							flex-direction: row-reverse;
+							.info {
+								padding-right: 4em;
+							}
+						}
+						.visual {
+							.proportional(680/460);
+							background-size: cover;
+							flex-basis: 49%;
+							@media screen and (max-width: @mobile-breakpoint) {
+								width: 100%;
+							}
+						}
+						.info {
+							flex: 1 1;
+							.flex-column;
+							justify-content: center;
+							align-items: flex-start;
+							text-align: left;
+							padding-left: 4em;
+							@media screen and (max-width: @mobile-breakpoint) {
+								align-items: center;
+								text-align: center;
+								padding: 2em!important;
+							}
+							>*:nth-child(n+2) {
+								margin-top: 5%;
+							}
+							h3 {
+								text-align: inherit;
+								font-size: 2.2em;
+								margin: 0;
+							}
+							p {
+								margin-bottom: 0;
+							}
+							.actions {
+
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+	}
+}
+
+#hotels-set {
+	width: 100%;
+	max-width: 1280px;
+	margin: auto;
+}
+
+[data-module="destinationDetail"] h1 {
+	display: none;
+}
